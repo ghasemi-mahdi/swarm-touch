@@ -1,10 +1,24 @@
-2 Managers
-2 Workers
+The cluster:
+- 2 Managers
+- 2 Workers
 
-each worker need to has fastapi+redis showing:
-    - it host name
-    - it's own hit counter
-    - total hit counter
+Workers APIs:
+- /health:
+```json
+{
+    "worker": "wrk1",
+    "status": true
+}
+```
+
+- /counter:
+```json
+{
+    "worker": "wrk1",
+    "worker_hits": 6,
+    "total_hits": 14
+}
+```
 
 
 
